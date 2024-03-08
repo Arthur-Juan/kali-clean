@@ -15,3 +15,9 @@ After the script is done reboot and select i3 (top right corner) on the login sc
 ## Credits
 
 Wallpaper by Wenqing Yan ( https://www.yuumeiart.com/ ) 
+
+## TODO:
+* Add catppuccin theme to rofi
+* Change alias for rofi to `rofi -show drun -show-icons`
+* Add _JAVA-OPTIONS to GTKLookAndFeel
+* Install Charles Proxy
