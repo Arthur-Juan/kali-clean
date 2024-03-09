@@ -21,3 +21,5 @@ Wallpaper by Wenqing Yan ( https://www.yuumeiart.com/ )
 * Change alias for rofi to `rofi -show drun -show-icons`
 * Add _JAVA-OPTIONS to GTKLookAndFeel
 * Install Charles Proxy
+* Install Docker & Docker compose
+* Add docker group
