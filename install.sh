@@ -7,6 +7,23 @@ sudo apt-get install -y arandr flameshot arc-theme feh i3blocks i3status i3 i3-w
 sudo apt-get install -y libxcb-shape0-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev xcb libxcb1-dev libxcb-icccm4-dev libyajl-dev libev-dev libxcb-xkb-dev libxcb-cursor-dev libxkbcommon-dev libxcb-xinerama0-dev libxkbcommon-x11-dev libstartup-notification0-dev libxcb-randr0-dev libxcb-xrm0 libxcb-xrm-dev autoconf meson
 sudo apt-get install -y libxcb-render-util0-dev libxcb-shape0-dev libxcb-xfixes0-dev 
 
+echo "insalling vscode"
+wget "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+echo "done"
+
+echo "installing docker"
+sudo apt install docker.io docker-compose
+sudo usermod -aG docker $USER
+echo "done"
+
+echo "installing charles proxy"
+wget -qO- https://www.charlesproxy.com/packages/apt/charles-repo.asc | sudo tee /etc/apt/keyrings/charles-repo.asc
+sudo sh -c 'echo deb [signed-by=/etc/apt/keyrings/charles-repo.asc] https://www.charlesproxy.com/packages/apt/ charles-proxy main > /etc/apt/sources.list.d/charles.list'
+sudo apt-get update && sudo apt-get install charles-proxy
+echo "done"
+
+
+
 mkdir -p ~/.local/share/fonts/
 
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Iosevka.zip
@@ -41,6 +58,13 @@ cp .config/rofi/config ~/.config/rofi/config
 cp .fehbg ~/.fehbg
 cp .config/i3/clipboard_fix.sh ~/.config/i3/clipboard_fix.sh
 cp -r .wallpaper ~/.wallpaper 
+
+echo "rofi config"
+git clone https://github.com/catppuccin/rofi
+cd ./rofi/basic
+./install.sh
+echo "done"
+
 
 echo "Done! Grab some wallpaper and run pywal -i filename to set your color scheme. To have the wallpaper set on every boot edit ~.fehbg"
 echo "After reboot: Select i3 on login, run lxappearance and select arc-dark"
